@@ -87,12 +87,15 @@ const buscar = ( req, res = response ) => {
     }
 
     switch (coleccion) {
+
         case 'usuarios':
             buscarUsuarios(termino, res);
         break;
+
         case 'categorias':
             buscarCategorias(termino, res);
         break;
+        
         case 'productos':
             buscarProductos(termino, res);
         break;

@@ -10,13 +10,15 @@ const {
 } = require('../middlewares');
 
 
-const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
+const { esRoleValido,
+        emailExiste,
+        existeUsuarioPorId } = require('../helpers/db-validators');
 
 const { usuariosGet,
         usuariosPut,
         usuariosPost,
         usuariosDelete,
-        usuariosPatch } = require('../controllers/usuarios');
+        usuariosPatch } = require('../controllers');
 
 const router = Router();
 

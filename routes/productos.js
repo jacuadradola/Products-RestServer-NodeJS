@@ -1,15 +1,19 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { validarJWT, validarCampos, esAdminRole } = require('../middlewares');
+const { validarJWT,
+    validarCampos,
+    esAdminRole } = require('../middlewares');
 
 const { crearProducto,
         obtenerProductos,
         obtenerProducto,
         actualizarProducto, 
-        borrarProducto } = require('../controllers/productos');
+        borrarProducto } = require('../controllers');
 
-const { existeCategoriaPorId, existeProductoPorId, existeProductoPorNombre } = require('../helpers/db-validators');
+const { existeCategoriaPorId,
+    existeProductoPorId,
+    existeProductoPorNombre } = require('../helpers/db-validators');
 
 const router = Router();
 

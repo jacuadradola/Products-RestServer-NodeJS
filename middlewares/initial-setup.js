@@ -1,15 +1,13 @@
 const bcryptjs = require('bcryptjs');
-const { response } = require('express');
  
-const Rol = require('../models/role');
-const Usuario = require('../models/usuario');
+const { Role, Usuario } = require('../models');
  
 const crearRoles = async() => {
  
     try {        
  
         // Contar roles en DB
-        const existenRoles = await Rol.countDocuments();
+        const existenRoles = await Role.countDocuments();
  
         // Verificar si existen roles
         if ( existenRoles > 0 ){
@@ -18,8 +16,8 @@ const crearRoles = async() => {
  
         // Crear roles en caso que no existan
         await Promise.all([
-            new Rol({ rol: 'USER_ROLE' }).save(),
-            new Rol({ rol: 'ADMIN_ROLE' }).save(),
+            new Role({ rol: 'USER_ROLE' }).save(),
+            new Role({ rol: 'ADMIN_ROLE' }).save(),
         ]);
         
         console.log(`2 - Se registraron a la DB: "ADMIN_ROLE" and "USER_ROLE"`);
